@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Ahmad Iqbal Firmansyah
 
-## Getting Started
+Portfolio website modern yang dibangun dengan Next.js 16, TypeScript, dan Tailwind CSS.
 
-First, run the development server:
+## 🚀 Fitur
 
+- ✨ Desain modern dengan glassmorphism effect
+- 🎨 Custom color palette dengan Material Design 3
+- 📱 Fully responsive untuk semua ukuran layar
+- ⚡ Optimized dengan Next.js 16 dan Turbopack
+- 🎯 TypeScript untuk type safety
+- 🌙 Dark mode by default
+- 🔤 Custom fonts: Space Grotesk, Hanken Grotesk, JetBrains Mono
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16.2.6
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Material Symbols
+- **Fonts**: Google Fonts (Space Grotesk, Hanken Grotesk, JetBrains Mono)
+
+## 📦 Instalasi
+
+1. Clone repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd portofolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Jalankan development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Buka browser dan akses `http://localhost:3000`
 
-## Learn More
+## 🏗️ Struktur Project
 
-To learn more about Next.js, take a look at the following resources:
+```
+portofolio/
+├── app/
+│   ├── components/
+│   │   ├── Navbar.tsx      # Navigation bar
+│   │   ├── Hero.tsx        # Hero section
+│   │   ├── About.tsx       # About section
+│   │   ├── Skills.tsx      # Skills section
+│   │   └── Footer.tsx      # Footer
+│   ├── globals.css         # Global styles
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Home page
+├── public/                 # Static assets
+├── tailwind.config.ts      # Tailwind configuration
+├── next.config.ts          # Next.js configuration
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Mengubah Warna
 
-## Deploy on Vercel
+Edit file `tailwind.config.ts` untuk mengubah color palette:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```typescript
+colors: {
+  primary: "#cfbcff",
+  secondary: "#cdc0e9",
+  tertiary: "#e7c365",
+  // ... dan lainnya
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Mengubah Font
+
+Edit file `app/layout.tsx` untuk mengubah font:
+
+```typescript
+import { Your_Font } from "next/font/google";
+```
+
+## 📝 Scripts
+
+- `npm run dev` - Menjalankan development server
+- `npm run build` - Build untuk production
+- `npm start` - Menjalankan production server
+- `npm run lint` - Menjalankan ESLint
+
+## 🌐 Deployment
+
+Project ini siap untuk di-deploy ke Vercel:
+
+```bash
+npm run build
+```
+
+Atau deploy langsung ke Vercel dengan satu klik.
+
+## 📄 License
+
+© 2024 Ahmad Iqbal Firmansyah. All rights reserved.
+
+## 👤 Author
+
+**Ahmad Iqbal Firmansyah**
+- Full-Stack & Front-End Developer
+- Business Information Systems Student at Politeknik Negeri Malang

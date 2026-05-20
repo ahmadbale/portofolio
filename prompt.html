@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ahmad Iqbal Firmansyah - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#4d4465",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-secondary": "#342b4b",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "error-container": "#93000a",
+                        "surface-bright": "#3b383e",
+                        "surface-container-highest": "#36343a",
+                        "inverse-primary": "#6750a4",
+                        "secondary-fixed": "#e9ddff",
+                        "primary-container": "#6750a4",
+                        "outline-variant": "#494551",
+                        "tertiary-container": "#c9a74d",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "on-tertiary": "#3e2e00",
+                        "on-primary": "#381e72",
+                        "surface-container-lowest": "#0f0d13",
+                        "surface-container-low": "#1d1b20",
+                        "surface-container-high": "#2b292f",
+                        "inverse-on-surface": "#322f35",
+                        "surface-container": "#211f24",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "secondary": "#cdc0e9",
+                        "outline": "#948e9c",
+                        "on-primary-fixed": "#22005d",
+                        "tertiary": "#e7c365",
+                        "on-tertiary-container": "#503d00",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "background": "#141218",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#bfb2da",
+                        "surface": "#141218",
+                        "on-surface": "#e6e0e9",
+                        "on-secondary-fixed": "#1f1635",
+                        "surface-dim": "#141218",
+                        "inverse-surface": "#e6e0e9",
+                        "on-primary-container": "#e0d2ff",
+                        "surface-tint": "#cfbcff",
+                        "primary-fixed": "#e9ddff",
+                        "on-background": "#e6e0e9",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "on-surface-variant": "#cbc4d2",
+                        "primary": "#cfbcff",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#ffdf93",
+                        "surface-variant": "#36343a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin_desktop": "64px",
+                        "container_max_width": "1280px",
+                        "margin_mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-xl": ["Space Grotesk"],
+                        "display-xl-mobile": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-xl-mobile": ["44px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #00E5FF 0%, #BB86FC 100%);
+            color: #121212;
+            transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+        .btn-ghost {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #00E5FF;
+            transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .btn-ghost:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        body {
+            background-color: #121212;
+            color: #e6e0e9;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen pt-24">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(0,229,255,0.15)]">
+<div class="flex justify-between items-center max-w-container_max_width mx-auto px-margin_mobile md:px-margin_desktop py-4">
+<div class="font-headline-lg text-headline-lg-mobile text-on-surface dark:text-on-surface tracking-tighter">
+                Ahmad Iqbal Firmansyah
+            </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-primary dark:text-primary border-b-2 border-primary pb-1 font-label-sm text-label-sm uppercase tracking-widest hover:text-primary transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] scale-95 transition-transform duration-200" href="#about">About</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" href="#skills">Skills</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" href="#projects">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" href="#contact">Contact</a>
+</div>
+<button class="btn-ghost px-6 py-2 rounded-md font-label-sm text-label-sm uppercase">
+                Resume
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="max-w-container_max_width mx-auto px-margin_mobile md:px-margin_desktop py-20 md:py-32 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-8">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-on-surface">
+                Halo, saya <span class="text-primary">Ahmad Iqbal Firmansyah.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Full-Stack &amp; Front-End Developer | Business Information Systems. Focus on web development (Laravel), User-Centered Design, and AI integration (RAG, Chatbots).
+            </p>
+<div class="flex flex-wrap gap-4">
+<a class="btn-primary px-8 py-3 rounded-md font-label-sm text-label-sm uppercase tracking-widest" href="#projects">
+                    Lihat Proyek Saya
+                </a>
+<a class="btn-ghost px-8 py-3 rounded-md font-label-sm text-label-sm uppercase tracking-widest" href="#">
+                    Unduh CV
+                </a>
+</div>
+</div>
+<div class="flex-1 relative w-full aspect-square max-w-md">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-[100px]"></div>
+<img alt="Hero Image" class="w-full h-full object-cover rounded-xl border border-white/10 z-10 relative glass-card" data-alt="A futuristic workspace setup with multiple monitors displaying lines of glowing code against a dark background. The room is softly illuminated by neon cyan and vibrant purple ambient lighting. A sleek mechanical keyboard and a high-tech mouse rest on a minimalist desk. The atmosphere conveys intense focus and advanced technical capability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLeYCXMKERWIGMb4Zu9e3l_UyMoJdsZJ5zI6ck8l9VGPHGMegxlruADRq1t12GeiQnORnTwZBQqXDVMzl5B_wb4iQqlGsAejAknr-_ygRIUq9ShPswFTIAxD2Bb6VnMv5QITWpalw5xPaXdCeWJzD2XEAh1Q3AeEHi_gayuQjirYQsRp8DPx-DHnZhXredIbk9EqMHJLxDKLEQoYF4mENYkju5uN5Zz_N5Q84qqb-YXX_EhVV6jxxNJoPt-KKIBkmQahcJDaF4-NbB"/>
+</div>
+</section>
+<!-- About Section -->
+<section class="max-w-container_max_width mx-auto px-margin_mobile md:px-margin_desktop py-20" id="about">
+<div class="glass-card rounded-xl p-8 md:p-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">About Me</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                I am a D4 Business Information Systems student at Politeknik Negeri Malang with a strong passion for building scalable web applications. My journey includes intensive training through Bangkit Academy and AI Ignition Training, where I honed my skills in modern web development and artificial intelligence integration. I strive to create digital experiences that are not only functional but intuitively designed for the end user.
+            </p>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="max-w-container_max_width mx-auto px-margin_mobile md:px-margin_desktop py-20" id="skills">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-12 text-center">Technical Arsenal</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Front-End -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center gap-4 hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Front-End</h3>
+<div class="flex flex-wrap justify-center gap-2 mt-2">
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-3 py-1 rounded-full border border-primary/20">Tailwind CSS</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-3 py-1 rounded-full border border-primary/20">Bootstrap</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-3 py-1 rounded-full border border-primary/20">HTML/CSS</span>
+</div>
+</div>
+<!-- Back-End -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center gap-4 hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-tertiary" style="font-variation-settings: 'FILL' 1;">database</span>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Back-End</h3>
+<div class="flex flex-wrap justify-center gap-2 mt-2">
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-3 py-1 rounded-full border border-tertiary/20">Laravel</span>
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-3 py-1 rounded-full border border-tertiary/20">MySQL</span>
+</div>
+</div>
+<!-- Tools -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center gap-4 hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl text-[#BB86FC]" style="font-variation-settings: 'FILL' 1;">design_services</span>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Tools &amp; Methods</h3>
+<div class="flex flex-wrap justify-center gap-2 mt-2">
+<span class="bg-[#BB86FC]/10 text-[#BB86FC] font-label-sm text-label-sm px-3 py-1 rounded-full border border-[#BB86FC]/20">Figma</span>
+<span class="bg-[#BB86FC]/10 text-[#BB86FC] font-label-sm text-label-sm px-3 py-1 rounded-full border border-[#BB86FC]/20">Notion</span>
+<span class="bg-[#BB86FC]/10 text-[#BB86FC] font-label-sm text-label-sm px-3 py-1 rounded-full border border-[#BB86FC]/20">BPMN 2.0</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface border-t border-white/5 w-full py-12 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container_max_width mx-auto px-margin_mobile md:px-margin_desktop gap-gutter">
+<div class="font-headline-lg text-headline-lg-mobile text-on-surface">
+                Ahmad Iqbal Firmansyah
+            </div>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary">
+                © 2024 Ahmad Iqbal Firmansyah. Built with technical mastery.
+            </p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary hover:glow-sm transition-all duration-300" href="#">LinkedIn</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary hover:glow-sm transition-all duration-300" href="#">GitHub</a>
+<a class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary hover:glow-sm transition-all duration-300" href="#">Source Code</a>
+</div>
+</div>
+</footer>
+</body></html>
