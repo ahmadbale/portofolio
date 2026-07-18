@@ -1,54 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
-  --color-secondary-container: #4d4465;
-  --color-on-tertiary-fixed: #241a00;
-  --color-on-secondary: #342b4b;
-  --color-on-primary-fixed-variant: #4f378a;
-  --color-error-container: #93000a;
-  --color-surface-bright: #3b383e;
-  --color-surface-container-highest: #36343a;
-  --color-inverse-primary: #6750a4;
-  --color-secondary-fixed: #e9ddff;
-  --color-primary-container: #6750a4;
-  --color-outline-variant: #494551;
-  --color-tertiary-container: #c9a74d;
-  --color-secondary-fixed-dim: #cdc0e9;
-  --color-on-tertiary: #3e2e00;
-  --color-on-primary: #381e72;
-  --color-surface-container-lowest: #0f0d13;
-  --color-surface-container-low: #1d1b20;
-  --color-surface-container-high: #2b292f;
-  --color-inverse-on-surface: #322f35;
-  --color-surface-container: #211f24;
-  --color-on-tertiary-fixed-variant: #594400;
-  --color-secondary: #cdc0e9;
-  --color-outline: #948e9c;
-  --color-on-primary-fixed: #22005d;
-  --color-tertiary: #e7c365;
-  --color-on-tertiary-container: #503d00;
-  --color-on-secondary-fixed-variant: #4b4263;
-  --color-background: #141218;
-  --color-primary-fixed-dim: #cfbcff;
-  --color-on-error-container: #ffdad6;
-  --color-on-secondary-container: #bfb2da;
-  --color-surface: #141218;
-  --color-on-surface: #e6e0e9;
-  --color-on-secondary-fixed: #1f1635;
-  --color-surface-dim: #141218;
-  --color-inverse-surface: #e6e0e9;
-  --color-on-primary-container: #e0d2ff;
-  --color-surface-tint: #cfbcff;
-  --color-primary-fixed: #e9ddff;
-  --color-on-background: #e6e0e9;
-  --color-tertiary-fixed-dim: #e7c365;
-  --color-on-surface-variant: #cbc4d2;
-  --color-primary: #cfbcff;
-  --color-on-error: #690005;
-  --color-error: #ffb4ab;
-  --color-tertiary-fixed: #ffdf93;
-  --color-surface-variant: #36343a;
+  --color-secondary-container: var(--secondary-container);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-on-secondary: var(--on-secondary);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  --color-error-container: var(--error-container);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-inverse-primary: var(--inverse-primary);
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-primary-container: var(--primary-container);
+  --color-outline-variant: var(--outline-variant);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-on-tertiary: var(--on-tertiary);
+  --color-on-primary: var(--on-primary);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-surface-container: var(--surface-container);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
+  --color-secondary: var(--secondary);
+  --color-outline: var(--outline);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-tertiary: var(--tertiary);
+  --color-on-tertiary-container: var(--on-tertiary-container);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  --color-background: var(--background);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-on-error-container: var(--on-error-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-surface-dim: var(--surface-dim);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-surface-tint: var(--surface-tint);
+  --color-primary-fixed: var(--primary-fixed);
+  --color-on-background: var(--on-background);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-primary: var(--primary);
+  --color-on-error: var(--on-error);
+  --color-error: var(--error);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-surface-variant: var(--surface-variant);
 
   /* Spacing */
   --spacing-gutter: 24px;
@@ -78,6 +77,97 @@
   --font-size-body-lg: 18px;
 }
 
+:root {
+  /* Light Mode Colors (Material Design 3 mapping) */
+  --primary: #6750A4;
+  --secondary: #625B71;
+  --tertiary: #7D5260;
+  --background: #FDFBFF;
+  --surface: #FDFBFF;
+  --on-surface: #1C1B1F;
+  --on-surface-variant: #49454F;
+  --on-secondary-fixed: #FFFFFF;
+  --on-primary: #FFFFFF;
+  --secondary-container: #E8DEF8;
+  --on-secondary-container: #1D192B;
+  --outline: #79747E;
+  --outline-variant: #CAC4D0;
+  --surface-variant: #E7E0EC;
+  --error: #B3261E;
+  --on-error: #FFFFFF;
+
+  /* Glassmorphism Variables for Light Mode */
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-bg-hover: rgba(0, 0, 0, 0.05);
+  --card-border-hover: rgba(0, 0, 0, 0.15);
+  --nav-bg: rgba(253, 251, 255, 0.6);
+  --icon-hover-bg: rgba(0, 0, 0, 0.05);
+  --shadow-color: rgba(103, 80, 164, 0.15);
+  --accent: #9c27b0;
+}
+
+.dark {
+  /* Dark Mode Colors (Original Values) */
+  --secondary-container: #4d4465;
+  --on-tertiary-fixed: #241a00;
+  --on-secondary: #342b4b;
+  --on-primary-fixed-variant: #4f378a;
+  --error-container: #93000a;
+  --surface-bright: #3b383e;
+  --surface-container-highest: #36343a;
+  --inverse-primary: #6750a4;
+  --secondary-fixed: #e9ddff;
+  --primary-container: #6750a4;
+  --outline-variant: #494551;
+  --tertiary-container: #c9a74d;
+  --secondary-fixed-dim: #cdc0e9;
+  --on-tertiary: #3e2e00;
+  --on-primary: #381e72;
+  --surface-container-lowest: #0f0d13;
+  --surface-container-low: #1d1b20;
+  --surface-container-high: #2b292f;
+  --inverse-on-surface: #322f35;
+  --surface-container: #211f24;
+  --on-tertiary-fixed-variant: #594400;
+  --secondary: #cdc0e9;
+  --outline: #948e9c;
+  --on-primary-fixed: #22005d;
+  --tertiary: #e7c365;
+  --on-tertiary-container: #503d00;
+  --on-secondary-fixed-variant: #4b4263;
+  --background: #141218;
+  --primary-fixed-dim: #cfbcff;
+  --on-error-container: #ffdad6;
+  --on-secondary-container: #bfb2da;
+  --surface: #141218;
+  --on-surface: #e6e0e9;
+  --on-secondary-fixed: #1f1635;
+  --surface-dim: #141218;
+  --inverse-surface: #e6e0e9;
+  --on-primary-container: #e0d2ff;
+  --surface-tint: #cfbcff;
+  --primary-fixed: #e9ddff;
+  --on-background: #e6e0e9;
+  --tertiary-fixed-dim: #e7c365;
+  --on-surface-variant: #cbc4d2;
+  --primary: #cfbcff;
+  --on-error: #690005;
+  --error: #ffb4ab;
+  --tertiary-fixed: #ffdf93;
+  --surface-variant: #36343a;
+
+  /* Glassmorphism Variables for Dark Mode */
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-bg-hover: rgba(255, 255, 255, 0.05);
+  --card-border-hover: rgba(255, 255, 255, 0.15);
+  --nav-bg: rgba(255, 255, 255, 0.05);
+  --icon-hover-bg: rgba(255, 255, 255, 0.05);
+  --shadow-color: rgba(207, 188, 255, 0.15);
+  --accent: #BB86FC;
+}
+
 @layer base {
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -86,12 +176,13 @@
 
 @layer components {
   .glass-card {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: var(--card-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--card-border);
     position: relative;
     overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
   
   .glass-card::before {
@@ -104,7 +195,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.05),
+      var(--card-bg-hover),
       transparent
     );
     transition: 0.5s;
@@ -115,11 +206,18 @@
   }
 
   .btn-primary {
-    @apply bg-[#cfbcff] text-[#1f1635] hover:bg-[#cfbcff]/90 transition-all duration-300;
+    @apply bg-primary text-background hover:opacity-90 transition-all duration-300;
   }
 
   .btn-ghost {
-    @apply border border-white/10 text-white hover:bg-white/5 transition-all duration-300;
+    background-color: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--on-surface);
+    transition: all 0.3s ease;
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--card-bg-hover);
   }
 }
 
@@ -145,6 +243,7 @@
 }
 
 body {
-  background-color: #121212;
-  color: #e6e0e9;
+  background-color: var(--background);
+  color: var(--on-surface);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

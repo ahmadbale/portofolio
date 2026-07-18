@@ -7,28 +7,28 @@ export default function Skills() {
     {
       icon: "terminal",
       title: "Front-End",
-      iconColor: "text-[#cfbcff]",
-      bgColor: "bg-[#cfbcff]/10",
-      textColor: "text-[#cfbcff]",
-      borderColor: "border-[#cfbcff]/20",
+      iconColor: "text-primary",
+      bgColor: "bg-primary/10",
+      textColor: "text-primary",
+      borderColor: "border-primary/20",
       tags: ["Tailwind CSS", "Bootstrap", "HTML/CSS"],
     },
     {
       icon: "database",
       title: "Back-End & Databases",
-      iconColor: "text-[#e7c365]",
-      bgColor: "bg-[#e7c365]/10",
-      textColor: "text-[#e7c365]",
-      borderColor: "border-[#e7c365]/20",
+      iconColor: "text-tertiary",
+      bgColor: "bg-tertiary/10",
+      textColor: "text-tertiary",
+      borderColor: "border-tertiary/20",
       tags: ["Laravel", "MySQL","Next.js"],
     },
     {
       icon: "design_services",
       title: "Tools & Methods",
-      iconColor: "text-[#BB86FC]",
-      bgColor: "bg-[#BB86FC]/10",
-      textColor: "text-[#BB86FC]",
-      borderColor: "border-[#BB86FC]/20",
+      iconColor: "text-[var(--accent)]",
+      bgColor: "bg-[var(--accent)]/10",
+      textColor: "text-[var(--accent)]",
+      borderColor: "border-[var(--accent)]/20",
       tags: ["Figma", "Notion", "Postman"],
     },
   ];
@@ -54,7 +54,7 @@ export default function Skills() {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-[#e6e0e9] mb-12 text-center font-semibold"
+        className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-on-surface mb-12 text-center font-semibold"
       >
         Technical Skills
       </motion.h2>
@@ -78,7 +78,7 @@ export default function Skills() {
             >
               {skill.icon}
             </span>
-            <h3 className="font-[family-name:var(--font-hanken-grotesk)] text-lg leading-relaxed text-[#e6e0e9] font-semibold">
+            <h3 className="font-[family-name:var(--font-hanken-grotesk)] text-lg leading-relaxed text-on-surface font-semibold">
               {skill.title}
             </h3>
             <div className="flex flex-wrap justify-center gap-2 mt-2">

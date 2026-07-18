@@ -51,6 +51,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [selectedProject, setSelectedProject] = useState<{ project: Project; index: number } | null>(null);
   const categories = ["All", "Website", "UI/UX", "Graphic Design"];
 
   const filteredProjects = activeCategory === "All" 
@@ -65,7 +66,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-[#e6e0e9] mb-8 font-semibold"
+          className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-on-surface mb-8 font-semibold"
         >
           Featured Projects
         </motion.h2>
@@ -84,8 +85,8 @@ export default function Projects() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-widest transition-all duration-300 border ${
                 activeCategory === cat
-                  ? "bg-[#cfbcff] text-[#1f1635] border-[#cfbcff] shadow-[0_0_15px_rgba(207,188,255,0.4)]"
-                  : "bg-white/5 text-[#cbc4d2] border-white/10 hover:border-[#cfbcff]/50 hover:bg-white/10"
+                  ? "bg-primary text-background border-primary shadow-[0_0_15px_var(--shadow-color)]"
+                  : "bg-[var(--card-bg)] text-on-surface-variant border-[var(--card-border)] hover:border-primary/50 hover:bg-[var(--card-bg-hover)]"
               }`}
             >
               {cat}
@@ -100,25 +101,126 @@ export default function Projects() {
       >
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard 
+              key={project.title} 
+              project={project} 
+              onImageClick={(index) => setSelectedProject({ project, index })} 
+            />
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {/* Image Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <ImageModal 
+            project={selectedProject.project}
+            initialIndex={selectedProject.index}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ImageModal({ project, initialIndex, onClose }: { project: Project; initialIndex: number; onClose: () => void }) {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % project.images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-8 backdrop-blur-md"
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className="relative max-w-5xl w-full max-h-[90vh] aspect-video bg-background rounded-xl overflow-hidden border border-[var(--card-border)] shadow-2xl flex items-center justify-center"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={project.images[currentIndex]}
+              alt={`Enlarged Project Image - ${currentIndex + 1}`}
+              fill
+              className="object-contain"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        {project.images.length > 1 && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-white/20 p-2 rounded-full text-white transition-colors border border-white/10"
+            >
+              <span className="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-white/20 p-2 rounded-full text-white transition-colors border border-white/10"
+            >
+              <span className="material-symbols-outlined">chevron_right</span>
+            </button>
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+              {project.images.map((_, i) => (
+                <div
+                  key={i}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    i === currentIndex ? "bg-primary w-4" : "bg-white/30"
+                  }`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 bg-black/50 hover:bg-white/20 text-white rounded-full p-2 transition-colors z-30 flex items-center justify-center border border-white/10"
+        >
+          <span className="material-symbols-outlined">close</span>
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function ProjectCard({ project, onImageClick }: { project: Project; onImageClick: (index: number) => void }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
 
   const nextImage = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     setCurrentImage((prev) => (prev + 1) % project.images.length);
   };
 
   const prevImage = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     setCurrentImage((prev) => (prev - 1 + project.images.length) % project.images.length);
   };
 
@@ -130,9 +232,12 @@ function ProjectCard({ project }: { project: Project }) {
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.4 }}
       whileHover={{ y: -10 }}
-      className="glass-card rounded-2xl overflow-hidden group border border-white/10 flex flex-col h-full"
+      className="glass-card rounded-2xl overflow-hidden group border border-[var(--card-border)] flex flex-col h-full"
     >
-      <div className="relative aspect-video overflow-hidden bg-black/20">
+      <div 
+        className="relative aspect-video overflow-hidden bg-black/20 cursor-pointer"
+        onClick={() => onImageClick(currentImage)}
+      >
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImage}
@@ -155,13 +260,13 @@ function ProjectCard({ project }: { project: Project }) {
           <>
             <button
               onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 p-1 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-[#cfbcff] hover:text-[#1f1635]"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 p-1 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-background"
             >
               <span className="material-symbols-outlined text-sm">chevron_left</span>
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 p-1 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-[#cfbcff] hover:text-[#1f1635]"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/50 p-1 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-background"
             >
               <span className="material-symbols-outlined text-sm">chevron_right</span>
             </button>
@@ -170,28 +275,28 @@ function ProjectCard({ project }: { project: Project }) {
                 <div
                   key={i}
                   className={`w-1.5 h-1.5 rounded-full transition-all ${
-                    i === currentImage ? "bg-[#cfbcff] w-3" : "bg-white/30"
+                    i === currentImage ? "bg-primary w-3" : "bg-white/30"
                   }`}
                 />
               ))}
             </div>
           </>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141218] to-transparent opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60 pointer-events-none"></div>
       </div>
 
       <div className="p-6 space-y-4 flex flex-col flex-grow">
-        <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-[#e6e0e9]">
+        <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-on-surface">
           {project.title}
         </h3>
         <div>
-          <p className={`font-[family-name:var(--font-hanken-grotesk)] text-sm text-[#cbc4d2] leading-relaxed ${!isExpanded ? "line-clamp-3" : ""}`}>
+          <p className={`font-[family-name:var(--font-hanken-grotesk)] text-sm text-on-surface-variant leading-relaxed ${!isExpanded ? "line-clamp-3" : ""}`}>
             {project.description}
           </p>
           {project.description.length > 150 && (
             <button 
               onClick={() => setIsExpanded(!isExpanded)}
-              className="text-[#cfbcff] text-xs font-medium mt-1 hover:underline focus:outline-none"
+              className="text-primary text-xs font-medium mt-1 hover:underline focus:outline-none"
             >
               {isExpanded ? "Read Less" : "Read More"}
             </button>
@@ -200,7 +305,7 @@ function ProjectCard({ project }: { project: Project }) {
         
         <div className="flex flex-wrap gap-2">
           {project.tech.map((t: string, i: number) => (
-            <span key={i} className="text-[10px] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider bg-white/5 px-2 py-1 rounded text-[#cfbcff] border border-[#cfbcff]/20">
+            <span key={i} className="text-[10px] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider bg-[var(--card-bg)] px-2 py-1 rounded text-primary border border-primary/20">
               {t}
             </span>
           ))}
@@ -210,7 +315,7 @@ function ProjectCard({ project }: { project: Project }) {
           <Link 
             href={project.link}
             target="_blank"
-            className="inline-flex items-center gap-2 text-[#cfbcff] font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-widest font-semibold hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-primary font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-widest font-semibold hover:gap-3 transition-all"
           >
             View Project 
             <span className="material-symbols-outlined text-sm">arrow_forward</span>

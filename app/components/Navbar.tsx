@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Navbar() {
   return (
@@ -9,12 +10,12 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 w-full z-50 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(0,229,255,0.15)]"
+      className="fixed top-0 w-full z-50 bg-[var(--nav-bg)] backdrop-blur-xl border-b border-[var(--card-border)] shadow-[0_0_20px_var(--shadow-color)] transition-colors duration-300"
     >
       <div className="flex justify-between items-center max-w-[1280px] mx-auto px-5 md:px-16 py-4">
         <motion.div
           whileHover={{ scale: 1.02 }}
-          className="font-[family-name:var(--font-space-grotesk)] text-[32px] leading-tight text-[#e6e0e9] tracking-tighter font-semibold"
+          className="font-[family-name:var(--font-space-grotesk)] text-[32px] leading-tight text-on-surface tracking-tighter font-semibold transition-colors duration-300"
         >
           Ahmad Iqbal Firmansyah
         </motion.div>
@@ -28,21 +29,17 @@ export default function Navbar() {
           ].map((link) => (
             <Link
               key={link.name}
-              className="group relative text-[#cbc4d2] font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-widest hover:text-[#cfbcff] transition-colors duration-300 font-medium py-1"
+              className="group relative text-on-surface-variant font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-widest hover:text-primary transition-colors duration-300 font-medium py-1"
               href={link.href}
             >
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#cfbcff] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
+          <div className="ml-4 flex items-center">
+            <ThemeToggle />
+          </div>
         </div>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="btn-ghost px-6 py-2 rounded-md font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase font-medium"
-        >
-          Resume
-        </motion.button>
       </div>
     </motion.nav>
   );

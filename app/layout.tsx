@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { ThemeProvider } from "./components/ThemeProvider";
 import "./globals.css";
 
 const hankenGrotesk = Hanken_Grotesk({
@@ -33,7 +34,8 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${hankenGrotesk.variable} ${jetBrainsMono.variable} ${spaceGrotesk.variable} dark`}
+      className={`${hankenGrotesk.variable} ${jetBrainsMono.variable} ${spaceGrotesk.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <link
@@ -41,7 +43,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#141218] text-[#e6e0e9] antialiased flex flex-col min-h-screen pt-24">{children}</body>
+      <body className="bg-background text-on-surface antialiased flex flex-col min-h-screen pt-24">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
