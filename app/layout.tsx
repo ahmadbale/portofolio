@@ -48,6 +48,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+      <script src="https://www.chattoko.biz.id/api/widget/03fb8e3e-d8b8-404c-b695-21f6cfb4e225" async></script>
     </html>
   );
 }
