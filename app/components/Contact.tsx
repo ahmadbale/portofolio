@@ -1,12 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 
 const APP_EMAIL = "ahmadfirmansyah385@gmail.com";
 const APP_PHONE = "+62 82138700196";
+const WEB3FORMS_ACCESS_KEY = "10b99743-dde3-4911-a10c-05bdaddd7603"; // Ganti dengan access key dari web3forms.com
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
   const socialLinks = [
     { label: "GitHub", href: "https://github.com/ahmadbale" },
     { label: "WhatsApp", href: "https://wa.me/6282138700196" },
@@ -19,6 +27,39 @@ export default function Contact() {
     { icon: "location_on", label: "Location", value: "Malang, Indonesia" },
     { icon: "call", label: "Phone", value: APP_PHONE },
   ];
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Contact from ${formData.name}`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <section className="max-w-[1280px] mx-auto px-5 md:px-16 py-20" id="contact">
@@ -36,7 +77,7 @@ export default function Contact() {
           {/* Simple Contact Form */}
           <form
             className="w-full flex flex-col gap-4"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <div className="flex flex-col gap-1.5">
               <label className="font-[family-name:var(--font-hanken-grotesk)] text-sm font-medium text-on-surface">
@@ -44,7 +85,10 @@ export default function Contact() {
               </label>
               <input
                 type="text"
-                placeholder="John Doe"
+                placeholder="Type your name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
                 className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-md px-4 py-2 text-on-surface font-[family-name:var(--font-jetbrains-mono)] text-sm focus:outline-none focus:border-primary transition-colors"
               />
             </div>
@@ -54,7 +98,10 @@ export default function Contact() {
               </label>
               <input
                 type="email"
-                placeholder="john@example.com"
+                placeholder="Type your email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
                 className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-md px-4 py-2 text-on-surface font-[family-name:var(--font-jetbrains-mono)] text-sm focus:outline-none focus:border-primary transition-colors"
               />
             </div>
@@ -64,16 +111,30 @@ export default function Contact() {
               </label>
               <textarea
                 rows={4}
-                placeholder="How can I help you?"
+                placeholder="Type here..."
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                required
                 className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-md px-4 py-2 text-on-surface font-[family-name:var(--font-jetbrains-mono)] text-sm focus:outline-none focus:border-primary transition-colors resize-none"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="mt-2 bg-primary text-background font-[family-name:var(--font-jetbrains-mono)] font-medium text-sm px-6 py-2.5 rounded-md hover:opacity-90 transition-colors uppercase tracking-wider"
+              disabled={status === "loading"}
+              className="mt-2 bg-primary text-background font-[family-name:var(--font-jetbrains-mono)] font-medium text-sm px-6 py-2.5 rounded-md hover:opacity-90 transition-colors uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {status === "loading" ? "Sending..." : "Send Message"}
             </button>
+            {status === "success" && (
+              <p className="text-green-500 text-sm font-[family-name:var(--font-jetbrains-mono)]">
+                Message sent successfully! I will reply soon.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-red-500 text-sm font-[family-name:var(--font-jetbrains-mono)]">
+                Failed to send message. Please try again or email me directly.
+              </p>
+            )}
           </form>
         </ContactCard>
       </motion.div>
