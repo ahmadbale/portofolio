@@ -16,6 +16,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Sistem Task Management",
+    description: "Aplikasi To-Do List dengan konsep desain Neo Brutalism berbasis web yang digunakan untuk membantu pengguna dalam mengelola dan memantau tugas harian secara efisien.",
+    images: ["/Login.jpg", "/dashboard.jpg", "/cards.jpg", "/calendar.jpg"],
+    link: "https://todolist-pi-sage-41.vercel.app/login",
+    tech: ["React", "Supabase"],
+    category: "Website",
+  },
+  {
     title: "Sistem Survei Kepuasan Pelanggan Polinema",
     description: "Proyek sistem kepuasan pelanggan merupakan salah satu kebutuhan dalam mendukung proses belajar mengajar dan menciptakan lingkungan yang nyaman dan aman bagi pengguna atau masyarakat Polinema. Sistem ini digunakan untuk memastikan dan memberikan umpan balik dalam perbaikan dan evaluasi berbagai masalah. Penilaian kepuasan fasilitas polInema dapat membantu mengidentifikasi area yang perlu ditingkatkan dan memastikan bahwa kebutuhan pelanggan dapat terpenuhi.",
     images: ["/project_survey_1.png", "/project_survey_2.png", "/project_survey_3.png"],
@@ -54,14 +62,14 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<{ project: Project; index: number } | null>(null);
   const categories = ["All", "Website", "UI/UX", "Graphic Design"];
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
+  const filteredProjects = activeCategory === "All"
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   return (
     <section className="max-w-[1280px] mx-auto px-5 md:px-16 py-20" id="projects">
       <div className="text-center mb-12">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -72,7 +80,7 @@ export default function Projects() {
         </motion.h2>
 
         {/* Filter Menu */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -83,11 +91,10 @@ export default function Projects() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 rounded-full text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-widest transition-all duration-300 border ${
-                activeCategory === cat
+              className={`px-5 py-2 rounded-full text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-widest transition-all duration-300 border ${activeCategory === cat
                   ? "bg-primary text-background border-primary shadow-[0_0_15px_var(--shadow-color)]"
                   : "bg-[var(--card-bg)] text-on-surface-variant border-[var(--card-border)] hover:border-primary/50 hover:bg-[var(--card-bg-hover)]"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -95,16 +102,16 @@ export default function Projects() {
         </motion.div>
       </div>
 
-      <motion.div 
+      <motion.div
         layout
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
-            <ProjectCard 
-              key={project.title} 
-              project={project} 
-              onImageClick={(index) => setSelectedProject({ project, index })} 
+            <ProjectCard
+              key={project.title}
+              project={project}
+              onImageClick={(index) => setSelectedProject({ project, index })}
             />
           ))}
         </AnimatePresence>
@@ -113,7 +120,7 @@ export default function Projects() {
       {/* Image Modal */}
       <AnimatePresence>
         {selectedProject && (
-          <ImageModal 
+          <ImageModal
             project={selectedProject.project}
             initialIndex={selectedProject.index}
             onClose={() => setSelectedProject(null)}
@@ -188,9 +195,8 @@ function ImageModal({ project, initialIndex, onClose }: { project: Project; init
               {project.images.map((_, i) => (
                 <div
                   key={i}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    i === currentIndex ? "bg-primary w-4" : "bg-white/30"
-                  }`}
+                  className={`w-2 h-2 rounded-full transition-all ${i === currentIndex ? "bg-primary w-4" : "bg-white/30"
+                    }`}
                 />
               ))}
             </div>
@@ -234,7 +240,7 @@ function ProjectCard({ project, onImageClick }: { project: Project; onImageClick
       whileHover={{ y: -10 }}
       className="glass-card rounded-2xl overflow-hidden group border border-[var(--card-border)] flex flex-col h-full"
     >
-      <div 
+      <div
         className="relative aspect-video overflow-hidden bg-black/20 cursor-pointer"
         onClick={() => onImageClick(currentImage)}
       >
@@ -274,9 +280,8 @@ function ProjectCard({ project, onImageClick }: { project: Project; onImageClick
               {project.images.map((_, i) => (
                 <div
                   key={i}
-                  className={`w-1.5 h-1.5 rounded-full transition-all ${
-                    i === currentImage ? "bg-primary w-3" : "bg-white/30"
-                  }`}
+                  className={`w-1.5 h-1.5 rounded-full transition-all ${i === currentImage ? "bg-primary w-3" : "bg-white/30"
+                    }`}
                 />
               ))}
             </div>
@@ -294,7 +299,7 @@ function ProjectCard({ project, onImageClick }: { project: Project; onImageClick
             {project.description}
           </p>
           {project.description.length > 150 && (
-            <button 
+            <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="text-primary text-xs font-medium mt-1 hover:underline focus:outline-none"
             >
@@ -302,7 +307,7 @@ function ProjectCard({ project, onImageClick }: { project: Project; onImageClick
             </button>
           )}
         </div>
-        
+
         <div className="flex flex-wrap gap-2">
           {project.tech.map((t: string, i: number) => (
             <span key={i} className="text-[10px] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider bg-[var(--card-bg)] px-2 py-1 rounded text-primary border border-primary/20">
@@ -312,12 +317,12 @@ function ProjectCard({ project, onImageClick }: { project: Project; onImageClick
         </div>
 
         <div className="mt-auto pt-4">
-          <Link 
+          <Link
             href={project.link}
             target="_blank"
             className="inline-flex items-center gap-2 text-primary font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-widest font-semibold hover:gap-3 transition-all"
           >
-            View Project 
+            View Project
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
           </Link>
         </div>
