@@ -21,11 +21,11 @@ export default function Navbar() {
         </motion.div>
         <div className="hidden md:flex gap-8 items-center">
           {[
-            { name: "About", href: "#about" },
-            { name: "Skills", href: "#skills" },
-            { name: "Experience", href: "#experience" },
-            { name: "Projects", href: "#projects" },
-            { name: "Contact", href: "#contact" },
+            { name: "Tentang", href: "#about" },
+            { name: "Keahlian", href: "#skills" },
+            { name: "Pengalaman", href: "#experience" },
+            { name: "Proyek", href: "#projects" },
+            { name: "Kontak", href: "#contact" },
           ].map((link) => (
             <Link
               key={link.name}

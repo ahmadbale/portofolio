@@ -15,9 +15,9 @@ const experiences: Experience[] = [
     role: "Internship / Quality Control",
     period: "Jul 2020 - Nov 2020",
     description: [
-      "Focusing on web development (Laravel) and business process modeling.",
-      "Developing various campus projects and industrial standard applications.",
-      "Active in software engineering and artificial intelligence integration.",
+      "Mengimplementasikan framework Agile Scrum dalam proses Quality Assurance, termasuk sprint planning, daily stand-up, dan sprint review, sprint retrospective.",
+      "Posisi saya selama magang adalah sebagai Software Quality Control, pengujian yang saya lakukan adalah Black Box Testing, dalam peran ini saya menyusun dan menjalankan skenario pengujian.",
+      "Mencatat hasil Pengujian kemudian berkoordinasi langsung dengan tim pengembang untuk melaporkan dan mendokumentasikan bug serta memberikan masukan perbaikan.",
     ],
   },
   {
@@ -25,9 +25,9 @@ const experiences: Experience[] = [
     role: "Internship / Front End Developer",
     period: "Feb 2025 - Jun 2025",
     description: [
-      "Intensive training in Android development and cloud-based architecture.",
-      "Collaborated in a capstone project to build a scalable mobile solution.",
-      "Gained hands-on experience with production-level code and team collaboration.",
+      "Projek yang saya kerjakan adalah membangun Website Sistem Pejabat Pengelola Informasi dan Dokumentasi Polinema sebagai Front End Developer.",
+      "Tools yang saya gunakan untuk membuat desain adalah Figma dan Framework yang saya gunakan untuk membangun Website tersebut adalah Laravel dan Bootstrap.",
+      "Integrasi API Backend ke dalam tampilan Front End.",
     ],
   },
   {
@@ -35,9 +35,8 @@ const experiences: Experience[] = [
     role: "Internship / Full Stack Developer",
     period: "Jul 2025 - Jan 2026",
     description: [
-      "Building customized web solutions for internal management systems.",
-      "Designing responsive and user-centered interfaces with modern frameworks.",
-      "Integrating third-party APIs and managing relational databases.",
+      "Projek yang saya kerjakan adalah membangun Website Sistem Penerimaan Mahasiswa Baru STMIK PPKIA Pradnya Paramita (STIMATA) sebagai Full Stack Developer.",
+      "Tools yang saya gunakan untuk membuat desain adalah Figma dan Framework yang saya gunakan untuk membangun Website tersebut adalah Laravel dan Tailwind CSS.",
     ],
   },
 ];
@@ -51,7 +50,7 @@ export default function Experience() {
         viewport={{ once: true }}
         className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-on-surface mb-12 text-center font-semibold"
       >
-        Work Experience
+        Pengalaman Kerja
       </motion.h2>
 
       <div className="space-y-8">
@@ -65,8 +64,8 @@ export default function Experience() {
             className="glass-card p-8 rounded-xl border border-[var(--card-border)] relative overflow-hidden group"
           >
             {/* Timeline indicator for mobile/desktop */}
-            <div className="md:flex md:justify-between md:items-start gap-8">
-              <div className="space-y-2">
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="space-y-2 md:w-1/3 shrink-0">
                 <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl md:text-2xl font-bold text-primary">
                   {exp.role}
                 </h3>
@@ -78,12 +77,12 @@ export default function Experience() {
                 </p>
               </div>
               
-              <div className="mt-4 md:mt-0 md:max-w-xl">
+              <div className="mt-4 md:mt-0 md:flex-1">
                 <ul className="space-y-3">
                   {exp.description.map((item, i) => (
-                    <li key={i} className="flex gap-3 text-sm text-on-surface-variant leading-relaxed">
+                    <li key={i} className="flex items-start gap-3 text-sm text-on-surface-variant leading-relaxed text-justify">
                       <span className="text-primary mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-primary"></span>
-                      {item}
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>

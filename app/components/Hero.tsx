@@ -17,7 +17,7 @@ export default function Hero() {
           Halo, saya <span className="text-primary">Ahmad Iqbal Firmansyah.</span>
         </h1>
         <p className="font-[family-name:var(--font-hanken-grotesk)] text-lg leading-relaxed text-on-surface-variant max-w-2xl">
-          Full-Stack &amp; Front-End Developer | Business Information Systems. Focus on web development (Laravel), User-Centered Design.
+          Full-Stack &amp; Front-End Developer | Sistem Informasi Bisnis. Fokus pada pengembangan web (Laravel) dan Desain Berpusat pada Pengguna.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
@@ -31,7 +31,7 @@ export default function Hero() {
             download
             className="btn-ghost px-8 py-3 rounded-md font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-widest font-medium transition-colors"
           >
-            Download CV
+            Unduh CV
           </a>
         </div>
       </motion.div>

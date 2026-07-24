@@ -24,8 +24,8 @@ export default function Contact() {
 
   const contactInfo = [
     { icon: "mail", label: "Email", value: APP_EMAIL },
-    { icon: "location_on", label: "Location", value: "Malang, Indonesia" },
-    { icon: "call", label: "Phone", value: APP_PHONE },
+    { icon: "location_on", label: "Lokasi", value: "Malang, Indonesia" },
+    { icon: "call", label: "Telepon", value: APP_PHONE },
   ];
 
   const handleSubmit = async (e: FormEvent) => {
@@ -70,8 +70,8 @@ export default function Contact() {
         className="w-full"
       >
         <ContactCard
-          title="Contact Me"
-          description="If you have any questions or need help, please fill out the form here or reach out via email. I will do my best to respond within 1 business day."
+          title="Hubungi Saya"
+          description="Jika Anda memiliki pertanyaan atau membutuhkan bantuan, silakan isi formulir di sini atau hubungi melalui email. Saya akan berusaha sebaik mungkin untuk merespons dalam 1 hari kerja."
           contactInfo={contactInfo}
         >
           {/* Simple Contact Form */}
@@ -81,11 +81,11 @@ export default function Contact() {
           >
             <div className="flex flex-col gap-1.5">
               <label className="font-[family-name:var(--font-hanken-grotesk)] text-sm font-medium text-on-surface">
-                Name
+                Nama
               </label>
               <input
                 type="text"
-                placeholder="Type your name"
+                placeholder="Ketik nama Anda"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -98,7 +98,7 @@ export default function Contact() {
               </label>
               <input
                 type="email"
-                placeholder="Type your email"
+                placeholder="Ketik email Anda"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
@@ -107,11 +107,11 @@ export default function Contact() {
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="font-[family-name:var(--font-hanken-grotesk)] text-sm font-medium text-on-surface">
-                Message
+                Pesan
               </label>
               <textarea
                 rows={4}
-                placeholder="Type here..."
+                placeholder="Ketik di sini..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
@@ -123,16 +123,16 @@ export default function Contact() {
               disabled={status === "loading"}
               className="mt-2 bg-primary text-background font-[family-name:var(--font-jetbrains-mono)] font-medium text-sm px-6 py-2.5 rounded-md hover:opacity-90 transition-colors uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {status === "loading" ? "Sending..." : "Send Message"}
+              {status === "loading" ? "Mengirim..." : "Kirim Pesan"}
             </button>
             {status === "success" && (
               <p className="text-green-500 text-sm font-[family-name:var(--font-jetbrains-mono)]">
-                Message sent successfully! I will reply soon.
+                Pesan berhasil terkirim! Saya akan segera membalas.
               </p>
             )}
             {status === "error" && (
               <p className="text-red-500 text-sm font-[family-name:var(--font-jetbrains-mono)]">
-                Failed to send message. Please try again or email me directly.
+                Gagal mengirim pesan. Silakan coba lagi atau email saya langsung.
               </p>
             )}
           </form>
@@ -147,7 +147,7 @@ export default function Contact() {
         className="mt-16 flex flex-col items-center gap-6"
       >
         <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-semibold text-on-surface">
-          Find Me
+          Temukan Saya
         </h3>
         <div className="flex flex-wrap items-center justify-center gap-4">
           {socialLinks.map((link) => (
@@ -209,8 +209,8 @@ function PlusIcon({ className }: { className?: string }) {
 }
 
 function ContactCard({
-  title = "Contact With Us",
-  description = "If you have any questions regarding our Services or need help, please fill out the form here. We do our best to respond within 1 business day.",
+  title = "Hubungi Saya",
+  description = "Jika Anda memiliki pertanyaan mengenai Layanan saya atau membutuhkan bantuan, silakan isi formulir di sini. Saya akan berusaha merespons dalam 1 hari kerja.",
   contactInfo,
   children,
 }: ContactCardProps) {

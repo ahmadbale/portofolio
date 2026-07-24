@@ -41,7 +41,7 @@ const projects: Project[] = [
   },
   {
     title: "Eco-Friendly Mobile App",
-    description: "A modern UI/UX design for a mobile application focused on sustainable living and carbon footprint tracking.",
+    description: "Desain UI/UX modern untuk aplikasi mobile yang berfokus pada gaya hidup berkelanjutan dan pelacakan jejak karbon.",
     images: ["/next.svg", "/vercel.svg"],
     link: "#",
     tech: ["Figma", "Prototyping"],
@@ -49,7 +49,7 @@ const projects: Project[] = [
   },
   {
     title: "Modern Branding Identity",
-    description: "Graphic design project for a tech startup, including logo design, color palette, and social media assets.",
+    description: "Proyek desain grafis untuk startup teknologi, termasuk desain logo, palet warna, dan aset media sosial.",
     images: ["/globe.svg"],
     link: "#",
     tech: ["Illustrator", "Photoshop"],
@@ -76,7 +76,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-on-surface mb-8 font-semibold"
         >
-          Featured Projects
+          Proyek 
         </motion.h2>
 
         {/* Filter Menu */}
@@ -170,7 +170,7 @@ function ImageModal({ project, initialIndex, onClose }: { project: Project; init
           >
             <Image
               src={project.images[currentIndex]}
-              alt={`Enlarged Project Image - ${currentIndex + 1}`}
+              alt={`Gambar Proyek Diperbesar - ${currentIndex + 1}`}
               fill
               className="object-contain"
             />
@@ -303,7 +303,7 @@ function ProjectCard({ project, onImageClick }: { project: Project; onImageClick
               onClick={() => setIsExpanded(!isExpanded)}
               className="text-primary text-xs font-medium mt-1 hover:underline focus:outline-none"
             >
-              {isExpanded ? "Read Less" : "Read More"}
+              {isExpanded ? "Lebih Sedikit" : "Selengkapnya"}
             </button>
           )}
         </div>
@@ -322,7 +322,7 @@ function ProjectCard({ project, onImageClick }: { project: Project; onImageClick
             target="_blank"
             className="inline-flex items-center gap-2 text-primary font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-widest font-semibold hover:gap-3 transition-all"
           >
-            View Project
+            Lihat Proyek
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
           </Link>
         </div>

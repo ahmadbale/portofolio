@@ -13,10 +13,10 @@ export default function About() {
         className="glass-card rounded-xl p-8 md:p-12"
       >
         <h2 className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-on-surface mb-6 font-semibold">
-          About Me
+          Tentang Saya
         </h2>
         <p className="font-[family-name:var(--font-hanken-grotesk)] text-base leading-relaxed text-on-surface-variant">
-          I am a D4 Business Information Systems student at Politeknik Negeri Malang with a strong passion for building scalable web applications. My journey includes intensive training through Bangkit Academy and AI Ignition Training, where I honed my skills in modern web development and artificial intelligence integration. I strive to create digital experiences that are not only functional but intuitively designed for the end user.
+          Saya adalah mahasiswa D4 Sistem Informasi Bisnis di Politeknik Negeri Malang dengan minat yang kuat dalam membangun aplikasi web yang skalabel. Perjalanan saya mencakup pelatihan intensif melalui Bangkit Academy dan AI Ignition Training, di mana saya mengasah keterampilan saya dalam pengembangan web modern dan integrasi kecerdasan buatan. Saya berusaha menciptakan pengalaman digital yang tidak hanya fungsional tetapi juga dirancang secara intuitif untuk pengguna akhir.
         </p>
       </motion.div>
     </section>

@@ -15,7 +15,7 @@ export default function Skills() {
     },
     {
       icon: "database",
-      title: "Back-End & Databases",
+      title: "Back-End & Basis Data",
       iconColor: "text-tertiary",
       bgColor: "bg-tertiary/10",
       textColor: "text-tertiary",
@@ -24,7 +24,7 @@ export default function Skills() {
     },
     {
       icon: "design_services",
-      title: "Tools & Methods",
+      title: "Alat & Metode",
       iconColor: "text-[var(--accent)]",
       bgColor: "bg-[var(--accent)]/10",
       textColor: "text-[var(--accent)]",
@@ -56,7 +56,7 @@ export default function Skills() {
         viewport={{ once: true }}
         className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-on-surface mb-12 text-center font-semibold"
       >
-        Technical Skills
+        Keahlian Teknis
       </motion.h2>
       <motion.div 
         variants={containerVariants}
