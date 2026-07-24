@@ -40,20 +40,12 @@ const projects: Project[] = [
     category: "Website",
   },
   {
-    title: "Eco-Friendly Mobile App",
-    description: "Desain UI/UX modern untuk aplikasi mobile yang berfokus pada gaya hidup berkelanjutan dan pelacakan jejak karbon.",
-    images: ["/next.svg", "/vercel.svg"],
+    title: "Automotive News Portal Mobile App",
+    description: "Aplikasi portal berita otomotif ini menawarkan pengalaman pengguna yang modern dan intuitif dengan antarmuka yang bersih dan mudah dinavigasi. Menampilkan berita terbaru, ulasan kendaraan, dan informasi otomotif lainnya, aplikasi ini mencakup filter kategori, pencarian cepat, dan desain responsif yang dioptimalkan untuk berbagai perangkat. Dengan skema warna yang berani dan tata letak yang terstruktur, aplikasi ini menyediakan akses mudah ke informasi otomotif secara efisien.",
+    images: ["/login_mockup.png", "/home.png", "/content_mackup.png"],
     link: "#",
     tech: ["Figma", "Prototyping"],
     category: "UI/UX",
-  },
-  {
-    title: "Modern Branding Identity",
-    description: "Proyek desain grafis untuk startup teknologi, termasuk desain logo, palet warna, dan aset media sosial.",
-    images: ["/globe.svg"],
-    link: "#",
-    tech: ["Illustrator", "Photoshop"],
-    category: "Graphic Design",
   },
 ];
 
