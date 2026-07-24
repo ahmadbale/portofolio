@@ -11,7 +11,7 @@ export default function Skills() {
       bgColor: "bg-primary/10",
       textColor: "text-primary",
       borderColor: "border-primary/20",
-      tags: ["Tailwind CSS", "Bootstrap", "HTML/CSS"],
+      tags: ["Tailwind CSS", "Bootstrap", "HTML/CSS", "React"],
     },
     {
       icon: "database",
@@ -20,7 +20,7 @@ export default function Skills() {
       bgColor: "bg-tertiary/10",
       textColor: "text-tertiary",
       borderColor: "border-tertiary/20",
-      tags: ["Laravel", "MySQL","Next.js"],
+      tags: ["Laravel", "MySQL","Supabase","Next.js"],
     },
     {
       icon: "design_services",
@@ -29,7 +29,7 @@ export default function Skills() {
       bgColor: "bg-[var(--accent)]/10",
       textColor: "text-[var(--accent)]",
       borderColor: "border-[var(--accent)]/20",
-      tags: ["Figma", "Notion", "Postman"],
+      tags: ["Github","Figma", "Notion", "Postman"],
     },
   ];
 

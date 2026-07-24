@@ -19,7 +19,7 @@ const projects: Project[] = [
     title: "Sistem Task Management",
     description: "Aplikasi To-Do List dengan konsep desain Neo Brutalism berbasis web yang digunakan untuk membantu pengguna dalam mengelola dan memantau tugas harian secara efisien.",
     images: ["/Login.jpg", "/dashboard.jpg", "/cards.jpg", "/calendar.jpg"],
-    link: "https://todolist-pi-sage-41.vercel.app/login",
+    link: "https://todolist-pi-sage-41.vercel.app/",
     tech: ["React", "Supabase"],
     category: "Website",
   },
@@ -68,7 +68,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="font-[family-name:var(--font-space-grotesk)] text-[32px] md:text-[40px] leading-tight text-on-surface mb-8 font-semibold"
         >
-          Proyek 
+          Proyek
         </motion.h2>
 
         {/* Filter Menu */}
@@ -84,8 +84,8 @@ export default function Projects() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-widest transition-all duration-300 border ${activeCategory === cat
-                  ? "bg-primary text-background border-primary shadow-[0_0_15px_var(--shadow-color)]"
-                  : "bg-[var(--card-bg)] text-on-surface-variant border-[var(--card-border)] hover:border-primary/50 hover:bg-[var(--card-bg-hover)]"
+                ? "bg-primary text-background border-primary shadow-[0_0_15px_var(--shadow-color)]"
+                : "bg-[var(--card-bg)] text-on-surface-variant border-[var(--card-border)] hover:border-primary/50 hover:bg-[var(--card-bg-hover)]"
                 }`}
             >
               {cat}
