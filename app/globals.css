@@ -75,6 +75,14 @@
   --font-size-headline-lg-mobile: 32px;
   --font-size-label-sm: 12px;
   --font-size-body-lg: 18px;
+
+  /* Animations */
+  --animate-marquee: marquee var(--duration, 30s) linear infinite;
+  --animate-marquee-reverse: marquee var(--duration, 30s) linear infinite reverse;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
 }
 
 :root {
@@ -105,6 +113,9 @@
   --icon-hover-bg: rgba(0, 0, 0, 0.05);
   --shadow-color: rgba(103, 80, 164, 0.15);
   --accent: #9c27b0;
+
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
 }
 
 .dark {
@@ -166,6 +177,9 @@
   --icon-hover-bg: rgba(255, 255, 255, 0.05);
   --shadow-color: rgba(207, 188, 255, 0.15);
   --accent: #BB86FC;
+
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
 }
 
 @layer base {
