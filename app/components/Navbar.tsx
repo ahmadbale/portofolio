@@ -25,6 +25,7 @@ export default function Navbar() {
             { name: "Keahlian", href: "#skills" },
             { name: "Pengalaman", href: "#experience" },
             { name: "Proyek", href: "#projects" },
+            { name: "Sertifikat", href: "#certificates" },
             { name: "Kontak", href: "#contact" },
           ].map((link) => (
             <Link
