@@ -16,7 +16,15 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Sistem Task Management",
+    title: "Website Convert File PDF ke File MD",
+    description: "PDF Anda akan dikonversi ke format Markdown (.md). Markdown adalah format teks yang ringkas yang mempertahankan struktur seperti judul, daftar, tautan, tabel, dan gambar, sehingga sangat berguna saat mengubah PDF menjadi konten yang rapi, dapat diedit, dan dapat dicari, yang dapat digunakan kembali dalam dokumen, situs web, alat AI, atau basis data.",
+    images: ["/project_convert.png"],
+    link: "https://convert-to-md-one.vercel.app/",
+    tech: ["React", "Tailwind", "Supabase"],
+    category: "Website",
+  },
+  {
+    title: "Website Task Management",
     description: "Aplikasi To-Do List dengan konsep desain Neo Brutalism berbasis web yang digunakan untuk membantu pengguna dalam mengelola dan memantau tugas harian secara efisien.",
     images: ["/Login.jpg", "/dashboard.jpg", "/cards.jpg", "/calendar.jpg"],
     link: "https://todolist-pi-sage-41.vercel.app/",
@@ -50,13 +58,11 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeCategory, setActiveCategory] = useState<string>("Website");
   const [selectedProject, setSelectedProject] = useState<{ project: Project; index: number } | null>(null);
-  const categories = ["All", "Website", "UI/UX", "Graphic Design"];
+  const categories = ["Website", "UI/UX", "Graphic Design"];
 
-  const filteredProjects = activeCategory === "All"
-    ? projects
-    : projects.filter(p => p.category === activeCategory);
+  const filteredProjects = projects.filter(p => p.category === activeCategory);
 
   return (
     <section className="max-w-[1280px] mx-auto px-5 md:px-16 py-20" id="projects">
@@ -164,6 +170,7 @@ function ImageModal({ project, initialIndex, onClose }: { project: Project; init
               src={project.images[currentIndex]}
               alt={`Gambar Proyek Diperbesar - ${currentIndex + 1}`}
               fill
+              sizes="100vw"
               className="object-contain"
             />
           </motion.div>
@@ -249,6 +256,7 @@ function ProjectCard({ project, onImageClick }: { project: Project; onImageClick
               src={project.images[currentImage]}
               alt={`${project.title} - ${currentImage + 1}`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
             />
           </motion.div>

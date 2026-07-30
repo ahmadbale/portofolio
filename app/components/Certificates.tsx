@@ -119,6 +119,7 @@ function CertificateCard({ certificate, onImageClick }: { certificate: Certifica
               src={certificate.images[currentImage]}
               alt={`Sertifikat ${currentImage + 1}`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
               className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
             />
           </motion.div>
@@ -197,6 +198,7 @@ function ImageModal({ certificate, initialIndex, onClose }: { certificate: Certi
               src={certificate.images[currentIndex]}
               alt={`Sertifikat Diperbesar - ${currentIndex + 1}`}
               fill
+              sizes="100vw"
               className="object-contain"
             />
           </motion.div>

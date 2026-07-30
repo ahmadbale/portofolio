@@ -48,6 +48,7 @@ export default function Hero() {
           src="/foto_diri.jpg"
           width={500}
           height={500}
+          priority
         />
       </motion.div>
     </section>
