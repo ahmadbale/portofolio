@@ -20,7 +20,7 @@ const projects: Project[] = [
     description: "PDF Anda akan dikonversi ke format Markdown (.md). Markdown adalah format teks yang ringkas yang mempertahankan struktur seperti judul, daftar, tautan, tabel, dan gambar, sehingga sangat berguna saat mengubah PDF menjadi konten yang rapi, dapat diedit, dan dapat dicari, yang dapat digunakan kembali dalam dokumen, situs web, alat AI, atau basis data.",
     images: ["/project_convert.png"],
     link: "https://convert-to-md-one.vercel.app/",
-    tech: ["React", "Tailwind", "Supabase"],
+    tech: ["React", "Vite", "Tailwind CSS", "TypeScript"],
     category: "Website",
   },
   {
@@ -28,7 +28,7 @@ const projects: Project[] = [
     description: "Aplikasi To-Do List dengan konsep desain Neo Brutalism berbasis web yang digunakan untuk membantu pengguna dalam mengelola dan memantau tugas harian secara efisien.",
     images: ["/Login.jpg", "/dashboard.jpg", "/cards.jpg", "/calendar.jpg"],
     link: "https://todolist-pi-sage-41.vercel.app/",
-    tech: ["React", "Supabase"],
+    tech: ["React", "Vite", "Tailwind CSS", "Supabase"],
     category: "Website",
   },
   {
