@@ -16,9 +16,7 @@ export default function About() {
           Tentang Saya
         </h2>
         <p className="font-[family-name:var(--font-hanken-grotesk)] text-base leading-relaxed text-on-surface-variant">
-          Saya adalah seorang Mahasiswa Akhir D4 Sistem Informasi Bisnis di Politeknik Negeri Malang. Saya selalu menyukai hal-hal baru dan
-          mudah beradaptasi. Saya dapat bekerja secara tim maupun mandiri. Saya selalu berusaha mengembangkan kemampuan saya agar
-          dapat bersaing dengan kompetitor.
+          Lulusan Sistem Informasi Bisnis yang teliti dan termotivasi, dengan pengalaman praktis di bidang Software Development dan Quality Assurance. Mahir dalam membangun aplikasi web dan melakukan pengujian sistem untuk memastikan fungsionalitas dan kegunaan. Memiliki semangat tinggi dalam belajar secara berkelanjutan dan meningkatkan kualitas Software melalui praktik pengembangan dan pengujian yang terstruktur.
         </p>
       </motion.div>
     </section>
