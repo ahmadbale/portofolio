@@ -55,6 +55,14 @@ const projects: Project[] = [
     tech: ["Figma", "Prototyping"],
     category: "UI/UX",
   },
+  {
+    title: "Sistem PMB (Penerimaan Mahasiswa Baru) STIMATA",
+    description: "Sistem informasi penerimaan mahasiswa baru untuk STMIK PPKIA Pradya Paramita (STIMATA) Malang. Sistem ini menyediakan fitur login, dashboard administrasi, pengelolaan jalur seleksi, serta modul Rekognisi Pembelajaran Lampau (RPL) untuk mengakui capaian pembelajaran sebelumnya. Dilengkapi dengan manajemen biodata, portofolio, evaluasi diri, dan asesmen bagi calon mahasiswa.",
+    images: ["/project_pmb_1.png", "/project_pmb_2.png", "/project_pmb_3.png"],
+    link: "#",
+    tech: ["Laravel", "Bootstrap", "MySQL"],
+    category: "Website",
+  },
 ];
 
 export default function Projects() {
