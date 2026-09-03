@@ -3,8 +3,8 @@
 import React, { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 
-const APP_EMAIL = "ahmadfirmansyah385@gmail.com";
-const APP_PHONE = "+62 82138700196";
+const APP_EMAIL = "ahmadiqbalfirmn@gmail.com";
+const APP_PHONE = "0858 0874 1949";
 const WEB3FORMS_ACCESS_KEY = "10b99743-dde3-4911-a10c-05bdaddd7603"; // Ganti dengan access key dari web3forms.com
 
 export default function Contact() {
@@ -17,7 +17,7 @@ export default function Contact() {
 
   const socialLinks = [
     { label: "GitHub", href: "https://github.com/ahmadbale" },
-    { label: "WhatsApp", href: "https://wa.me/6282138700196" },
+    { label: "WhatsApp", href: "https://wa.me/6285808741949" },
     { label: "LinkedIn", href: "https://linkedin.com/in/ahmadbalee" },
     { label: "Instagram", href: "https://www.instagram.com/iqbal.firmn" },
   ];
