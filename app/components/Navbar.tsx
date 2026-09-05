@@ -22,6 +22,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-8 items-center">
           {[
             { name: "Tentang", href: "#about" },
+            { name: "Pendidikan", href: "#education" },
             { name: "Keahlian", href: "#skills" },
             { name: "Pengalaman", href: "#experience" },
             { name: "Proyek", href: "#projects" },

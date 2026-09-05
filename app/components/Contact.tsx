@@ -15,12 +15,6 @@ export default function Contact() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const socialLinks = [
-    { label: "GitHub", href: "https://github.com/ahmadbale" },
-    { label: "WhatsApp", href: "https://wa.me/6285808741949" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/ahmadbalee" },
-    { label: "Instagram", href: "https://www.instagram.com/iqbal.firmn" },
-  ];
 
   const contactInfo = [
     { icon: "mail", label: "Email", value: APP_EMAIL },
@@ -137,33 +131,6 @@ export default function Contact() {
             )}
           </form>
         </ContactCard>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="mt-16 flex flex-col items-center gap-6"
-      >
-        <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-semibold text-on-surface">
-          Temukan Saya
-        </h3>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          {socialLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-card flex items-center gap-x-2 rounded-full px-6 py-2.5 hover:bg-[var(--card-bg-hover)] hover:scale-105 transition-all duration-300 border border-[var(--card-border)]"
-            >
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-sm font-medium tracking-wide text-primary">
-                {link.label}
-              </span>
-            </a>
-          ))}
-        </div>
       </motion.div>
     </section>
   );
