@@ -17,7 +17,7 @@ export default function Hero() {
           Halo, saya <span className="text-primary">Ahmad Iqbal Firmansyah.</span>
         </h1>
         <p className="font-[family-name:var(--font-hanken-grotesk)] text-lg leading-relaxed text-on-surface-variant max-w-2xl">
-          Full-Stack Developer &amp; Quality Assurance | Sistem Informasi Bisnis. Fokus pada pengembangan web dan Desain Berpusat pada Pengguna.
+          IT Developer, Web Developer, Full Stack Developer, dan UI/UX Designer &amp; Quality Assurance | Sistem Informasi Bisnis. Fokus pada pengembangan web dan Desain Berpusat pada Pengguna.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link

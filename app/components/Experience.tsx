@@ -15,9 +15,9 @@ const experiences: Experience[] = [
     role: "Internship / Quality Control",
     period: "Jul 2020 - Nov 2020",
     description: [
-      "Mengimplementasikan framework Agile Scrum dalam proses Quality Assurance, termasuk sprint planning, daily stand-up, dan sprint review, sprint retrospective.",
-      "Posisi saya selama magang adalah sebagai Software Quality Control, pengujian yang saya lakukan adalah Black Box Testing, dalam peran ini saya menyusun dan menjalankan skenario pengujian.",
-      "Mencatat hasil Pengujian kemudian berkoordinasi langsung dengan tim pengembang untuk melaporkan dan mendokumentasikan bug serta memberikan masukan perbaikan.",
+      "Mengelola pengujian QA pada 2 sistem ERP secara bersamaan, memastikan standar kualitas yang konsisten dan penyelesaian tepat waktu untuk kedua platform.",
+      "Menerapkan kerangka kerja Agile Scrum dalam proses QA, termasuk perencanaan sprint, rapat harian, tinjauan sprint, dan retrospeksi.",
+      "Melakukan pengujian black-box dengan membuat dan menjalankan skenario pengujian, mendokumentasikan hasil pengujian, berkolaborasi dengan pengembang untuk melaporkan dan melacak bug serta menyusun dan memelihara release documentation untuk setiap deployment, yang merinci bug yang telah diperbaiki dan fitur yang dirilis di seluruh modul.",
     ],
   },
   {
@@ -25,9 +25,9 @@ const experiences: Experience[] = [
     role: "Internship / Front End Developer",
     period: "Feb 2025 - Jun 2025",
     description: [
-      "Projek yang saya kerjakan adalah membangun Website Sistem Pejabat Pengelola Informasi dan Dokumentasi Polinema sebagai Front End Developer.",
-      "Tools yang saya gunakan untuk membuat desain adalah Figma dan Framework yang saya gunakan untuk membangun Website tersebut adalah Laravel dan Bootstrap.",
-      "Integrasi API Backend ke dalam tampilan Front End.",
+      "Mengembangkan situs web PPID (Sistem Manajemen Informasi dan Dokumentasi) sebagai Pengembang Front-End, sehingga memungkinkan akses publik terhadap permintaan informasi dan meningkatkan efisiensi pencarian dokumen bagi institusi.",
+      "Merancang UI/UX yang intuitif di Figma dan mengimplementasikannya menjadi front-end yang responsif dan dapat diakses menggunakan Laravel dan Bootstrap, memastikan pengalaman pengguna yang konsisten di berbagai perangkat.",
+      "Menguji dan memvalidasi 161 endpoints REST API menggunakan Postman sebelum integrasi, sehingga mengurangi masalah inkonsistensi data dan memastikan komunikasi yang lancar antara frontend dan backend.",
     ],
   },
   {
@@ -35,8 +35,9 @@ const experiences: Experience[] = [
     role: "Internship / Full Stack Developer",
     period: "Jul 2025 - Jan 2026",
     description: [
-      "Projek yang saya kerjakan adalah membangun Website Sistem Penerimaan Mahasiswa Baru STMIK PPKIA Pradnya Paramita (STIMATA) sebagai Full Stack Developer.",
-      "Tools yang saya gunakan untuk membuat desain adalah Figma dan Framework yang saya gunakan untuk membangun Website tersebut adalah Laravel dan Tailwind CSS.",
+      "Mengembangkan Sistem Penerimaan Mahasiswa (SPMB) untuk STIMATA sebagai Pengembang Full Stack, mendigitalkan proses pendaftaran mahasiswa dan menggantikan alur kerja manual berbasis kertas.",
+      "Merancang UI/UX yang berpusat pada pengguna di Figma dan mengimplementasikan sistem responsif menggunakan Laravel dan Tailwind CSS, memastikan kemudahan penggunaan bagi calon mahasiswa dan staf penerimaan.",
+      "Membangun fitur end-to-end termasuk pendaftaran online, unggah dokumen, dashboard admin, beserta desain dan integrasi basis data menggunakan MySQL serta menerapkan RBAC (pendaftar, admin, panitia) untuk memperlancar proses peninjauan dan persetujuan penerimaan",
     ],
   },
 ];
