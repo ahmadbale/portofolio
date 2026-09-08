@@ -28,7 +28,7 @@ export default function Hero() {
           </Link>
           <a
             href="/CV.pdf"
-            download
+            target="_blank"
             className="btn-ghost px-8 py-3 rounded-md font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-widest font-medium transition-colors"
           >
             Unduh CV
