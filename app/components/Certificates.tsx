@@ -45,6 +45,20 @@ const certificates: Certificate[] = [
       "/sertif_generative_ai_3.jpg",
     ],
   },
+  {
+    id: "cert-6",
+    images: [
+      "/Sertifikat Fundamental Frontend Engineer with Vue Js-images-0.jpg",
+      "/Sertifikat Fundamental Frontend Engineer with Vue Js-images-1.jpg",
+    ],
+  },
+  {
+    id: "cert-7",
+    images: [
+      "/Sertifikat Fundamental Mobile Developer with Flutter-images-0.jpg",
+      "/Sertifikat Fundamental Mobile Developer with Flutter-images-1.jpg",
+    ],
+  },
 ];
 
 // ======================================================
@@ -59,7 +73,7 @@ export default function Certificates() {
 
   return (
     <section
-      className="max-w-[1280px] mx-auto px-5 md:px-12 lg:px-16 py-20"
+      className="w-full max-w-[1920px] mx-auto px-5 md:px-12 lg:px-16 py-20"
       id="certificates"
     >
       {/* ==================================================
@@ -97,7 +111,7 @@ export default function Certificates() {
 
       <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
+        className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 mx-auto"
       >
         <AnimatePresence mode="popLayout">
           {certificates.map((cert) => (
@@ -214,7 +228,7 @@ function CertificateCard({
         className="
           relative
           w-full
-          aspect-[4/3]
+          aspect-[1.41/1]
           overflow-hidden
           bg-black/20
           cursor-pointer
@@ -251,11 +265,11 @@ function CertificateCard({
               fill
               sizes="
                 (max-width: 768px) 100vw,
-                50vw
+                (max-width: 1024px) 50vw,
+                25vw
               "
               className="
-                object-contain
-                p-4
+                object-cover
                 opacity-90
                 group-hover:opacity-100
                 transition-opacity
