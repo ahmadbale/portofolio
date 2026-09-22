@@ -6,19 +6,16 @@ import "./globals.css";
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken-grotesk",
   subsets: ["latin"],
-  weight: ["400", "600"],
 });
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  weight: ["500"],
 });
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
-  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {

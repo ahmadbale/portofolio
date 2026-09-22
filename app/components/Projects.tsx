@@ -18,7 +18,7 @@ const projects: Project[] = [
   {
     title: "Website Convert File PDF ke File MD",
     description: "PDF Anda akan dikonversi ke format Markdown (.md). Markdown adalah format teks yang ringkas yang mempertahankan struktur seperti judul, daftar, tautan, tabel, dan gambar, sehingga sangat berguna saat mengubah PDF menjadi konten yang rapi, dapat diedit, dan dapat dicari, yang dapat digunakan kembali dalam dokumen, situs web, alat AI, atau basis data.",
-    images: ["/project_convert.png"],
+    images: ["/project_convert.webp"],
     link: "https://convert-to-md-one.vercel.app/",
     tech: ["React", "Vite", "Tailwind CSS", "TypeScript"],
     category: "Website",
@@ -26,7 +26,7 @@ const projects: Project[] = [
   {
     title: "Website Task Management",
     description: "Aplikasi To-Do List dengan konsep desain Neo Brutalism berbasis web yang digunakan untuk membantu pengguna dalam mengelola dan memantau tugas harian secara efisien.",
-    images: ["/Login.jpg", "/dashboard.jpg", "/cards.jpg", "/calendar.jpg"],
+    images: ["/Login.webp", "/dashboard.webp", "/cards.webp", "/calendar.webp"],
     link: "https://todolist-pi-sage-41.vercel.app/",
     tech: ["React", "Vite", "Tailwind CSS", "Supabase"],
     category: "Website",
@@ -34,7 +34,7 @@ const projects: Project[] = [
   {
     title: "Website Rhuma",
     description: "Website Rhuma merupakan situs web profil perusahaan berbasis WordPress yang dirancang untuk mendukung penyampaian layanan konsultasi dan pembangunan hunian kustom. Proyek ini bertujuan untuk menyajikan profil bisnis, visual portofolio arsitektur, dan akses komunikasi langsung secara modern, bersih, dan responsif guna meningkatkan kepercayaan calon klien.",
-    images: ["/project_rhuma_1.png", "/project_rhuma_2.png", "/project_rhuma_3.png", "/project_rhuma_4.png"],
+    images: ["/project_rhuma_1.webp", "/project_rhuma_2.webp", "/project_rhuma_3.webp", "/project_rhuma_4.webp"],
     link: "https://portofolio.freehosting.dev/",
     tech: ["WordPress"],
     category: "Website",
@@ -42,7 +42,7 @@ const projects: Project[] = [
   {
     title: "Sistem Survei Kepuasan Pelanggan Polinema",
     description: "Proyek sistem kepuasan pelanggan merupakan salah satu kebutuhan dalam mendukung proses belajar mengajar dan menciptakan lingkungan yang nyaman dan aman bagi pengguna atau masyarakat Polinema. Sistem ini digunakan untuk memastikan dan memberikan umpan balik dalam perbaikan dan evaluasi berbagai masalah. Penilaian kepuasan fasilitas polInema dapat membantu mengidentifikasi area yang perlu ditingkatkan dan memastikan bahwa kebutuhan pelanggan dapat terpenuhi.",
-    images: ["/project_survey_1.png", "/project_survey_2.png", "/project_survey_3.png"],
+    images: ["/project_survey_1.webp", "/project_survey_2.webp", "/project_survey_3.webp"],
     link: "https://github.com/ahmadbale/Project-Fix",
     tech: ["AdminLTE", "Bootstrap"],
     category: "Website",
@@ -50,7 +50,7 @@ const projects: Project[] = [
   {
     title: "Sistem PPID (Pejabat Pengelola Informasi & Dokumentasi Polinema)",
     description: "Sistem PPID  sistem informasi modern untuk mendukung layanan keterbukaan informasi publik di Politeknik Negeri Malang. Proyek ini bertujuan untuk memberikan akses informasi yang lebih mudah, transparan, dan efisien kepada masyarakat umum, sesuai dengan prinsip keterbukaan informasi publik.",
-    images: ["/project_ppid_1.png", "/project_ppid_2.png"],
+    images: ["/project_ppid_1.webp", "/project_ppid_2.webp"],
     link: "https://github.com/ahmadbale",
     tech: ["Laravel", "MySQL", "Bootstrap"],
     category: "Website",
@@ -58,7 +58,7 @@ const projects: Project[] = [
   {
     title: "Automotive News Portal Mobile App",
     description: "Aplikasi portal berita otomotif ini menawarkan pengalaman pengguna yang modern dan intuitif dengan antarmuka yang bersih dan mudah dinavigasi. Menampilkan berita terbaru, ulasan kendaraan, dan informasi otomotif lainnya, aplikasi ini mencakup filter kategori, pencarian cepat, dan desain responsif yang dioptimalkan untuk berbagai perangkat. Dengan skema warna yang berani dan tata letak yang terstruktur, aplikasi ini menyediakan akses mudah ke informasi otomotif secara efisien.",
-    images: ["/login_mockup.png", "/home.png", "/content_mackup.png"],
+    images: ["/login_mockup.webp", "/home.webp", "/content_mackup.webp"],
     link: "#",
     tech: ["Figma", "Prototyping"],
     category: "UI/UX",
@@ -66,7 +66,7 @@ const projects: Project[] = [
   {
     title: "Sistem PMB (Penerimaan Mahasiswa Baru) STIMATA",
     description: "Sistem informasi penerimaan mahasiswa baru untuk STMIK PPKIA Pradya Paramita (STIMATA) Malang. Sistem ini menyediakan fitur login, dashboard administrasi, pengelolaan jalur seleksi, serta modul Rekognisi Pembelajaran Lampau (RPL) untuk mengakui capaian pembelajaran sebelumnya. Dilengkapi dengan manajemen biodata, portofolio, evaluasi diri, dan asesmen bagi calon mahasiswa.",
-    images: ["/project_pmb_1.png", "/project_pmb_2.png", "/project_pmb_3.png"],
+    images: ["/project_pmb_1.webp", "/project_pmb_2.webp", "/project_pmb_3.webp"],
     link: "https://github.com/ahmadbale",
     tech: ["Laravel", "Bootstrap", "MySQL"],
     category: "Website",

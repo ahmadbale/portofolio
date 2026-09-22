@@ -101,7 +101,7 @@ export default function Hero() {
         <Image
           alt="Hero Image"
           className="w-full h-full object-cover rounded-xl border border-[var(--card-border)] z-10 relative glass-card animate-float"
-          src="/foto_diri.jpg"
+          src="/foto_diri.webp"
           width={500}
           height={500}
           priority

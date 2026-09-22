@@ -16,47 +16,47 @@ interface Certificate {
 const certificates: Certificate[] = [
   {
     id: "cert-1",
-    images: ["/sertif_mawapres.png"],
+    images: ["/sertif_mawapres.webp"],
   },
   {
     id: "cert-2",
-    images: ["/sertif_ui.png"],
+    images: ["/sertif_ui.webp"],
   },
   {
     id: "cert-3",
     images: [
-      "/sertifikat_AI_Praktis_1.jpg",
-      "/sertifikat_AI_Praktis_2.jpg",
+      "/sertifikat_AI_Praktis_1.webp",
+      "/sertifikat_AI_Praktis_2.webp",
     ],
   },
   {
     id: "cert-4",
     images: [
-      "/sertifikat_manaj_proyek_1.jpg",
-      "/sertifikat_manaj_proyek_2.jpg",
-      "/sertifikat_manaj_proyek_3.jpg",
+      "/sertifikat_manaj_proyek_1.webp",
+      "/sertifikat_manaj_proyek_2.webp",
+      "/sertifikat_manaj_proyek_3.webp",
     ],
   },
   {
     id: "cert-5",
     images: [
-      "/sertif_generative_ai_1.jpg",
-      "/sertif_generative_ai_2.jpg",
-      "/sertif_generative_ai_3.jpg",
+      "/sertif_generative_ai_1.webp",
+      "/sertif_generative_ai_2.webp",
+      "/sertif_generative_ai_3.webp",
     ],
   },
   {
     id: "cert-6",
     images: [
-      "/Sertifikat Fundamental Frontend Engineer with Vue Js-images-0.jpg",
-      "/Sertifikat Fundamental Frontend Engineer with Vue Js-images-1.jpg",
+      "/Sertifikat Fundamental Frontend Engineer with Vue Js-images-0.webp",
+      "/Sertifikat Fundamental Frontend Engineer with Vue Js-images-1.webp",
     ],
   },
   {
     id: "cert-7",
     images: [
-      "/Sertifikat Fundamental Mobile Developer with Flutter-images-0.jpg",
-      "/Sertifikat Fundamental Mobile Developer with Flutter-images-1.jpg",
+      "/Sertifikat Fundamental Mobile Developer with Flutter-images-0.webp",
+      "/Sertifikat Fundamental Mobile Developer with Flutter-images-1.webp",
     ],
   },
 ];
@@ -366,10 +366,9 @@ function CertificateCard({
                     rounded-full
                     transition-all
                     duration-300
-                    ${
-                      i === currentImage
-                        ? "bg-primary w-5"
-                        : "bg-white/40 w-1.5"
+                    ${i === currentImage
+                      ? "bg-primary w-5"
+                      : "bg-white/40 w-1.5"
                     }
                   `}
                 />
@@ -553,9 +552,8 @@ function ImageModal({
           >
             <Image
               src={certificate.images[currentIndex]}
-              alt={`Sertifikat Diperbesar - ${
-                currentIndex + 1
-              }`}
+              alt={`Sertifikat Diperbesar - ${currentIndex + 1
+                }`}
               fill
               sizes="100vw"
               className="object-contain p-4 md:p-8"
@@ -654,10 +652,9 @@ function ImageModal({
                     rounded-full
                     transition-all
                     duration-300
-                    ${
-                      i === currentIndex
-                        ? "bg-primary w-6"
-                        : "bg-white/30 w-2"
+                    ${i === currentIndex
+                      ? "bg-primary w-6"
+                      : "bg-white/30 w-2"
                     }
                   `}
                 />
